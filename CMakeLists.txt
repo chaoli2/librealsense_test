@@ -33,14 +33,16 @@ add_dependencies(main
   ${catkin_EXPORTED_TARGETS}
 )
 
-# segmentation fault always in this linking order
+# first linkage order
+# segmentation fault always in this linkage order
 target_link_libraries(main
   ${catkin_LIBRARIES}
   realsense2
 )
 
-# segmentation fault only when you use rs API in this link order
-# uncomment line 9 in main.cpp to see segmentation fault in this linking order
+# second linkage order
+# segmentation fault only when you use rs API in this linkage order
+# uncomment line 9 in main.cpp to see segmentation fault in this linkage order
 #target_link_libraries(main
 #  realsense2
 #  ${catkin_LIBRARIES}
